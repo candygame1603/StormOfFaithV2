@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wouter's Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Background moving blobs */
+    @keyframes move1 { 0% { transform: translate(0,0);} 50% { transform: translate(30px,20px);} 100% { transform: translate(0,0);} }
+    @keyframes move2 { 0% { transform: translate(0,0);} 50% { transform: translate(-40px,30px);} 100% { transform: translate(0,0);} }
+    .blob1 { animation: move1 12s infinite ease-in-out; }
+    .blob2 { animation: move2 16s infinite ease-in-out; }
+  </style>
+</head>
+<body class="relative overflow-x-hidden">
+
+<!-- Hero Section -->
+<section class="relative h-screen flex flex-col justify-center items-center bg-gradient-to-br from-slate-900 to-slate-700 text-white">
+  <!-- Background blobs -->
+  <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice">
+    <circle class="blob1" cx="200" cy="300" r="150" fill="rgba(0,120,255,0.2)" />
+    <circle class="blob2" cx="800" cy="200" r="100" fill="rgba(0,180,255,0.15)" />
+  </svg>
+
+  <h1 class="text-5xl font-bold z-10">Hi, I'm Wouter 👋</h1>
+  <p class="mt-4 text-xl z-10">Full-Stack Developer | React + .NET | Interactive Web Experiences</p>
+  <button class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg z-10">See My Work</button>
+</section>
+
+<!-- Projects Section -->
+<section class="relative py-20 bg-slate-800 text-white">
+  <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+
+  <!-- Blazor project filter component embed -->
+  <div id="blazor-projects" class="max-w-5xl mx-auto p-6 bg-slate-700 rounded-lg shadow-lg">
+    <!-- This is where the Blazor WebAssembly component will load -->
+    <app-project-filter></app-project-filter>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="relative py-20 bg-slate-900 text-white">
+  <h2 class="text-3xl font-bold text-center mb-8">Contact Me</h2>
+  <form class="max-w-xl mx-auto bg-slate-700 p-6 rounded-lg shadow-lg space-y-4">
+    <input type="text" placeholder="Name" class="w-full p-3 rounded bg-slate-600 border border-slate-500" />
+    <input type="email" placeholder="Email" class="w-full p-3 rounded bg-slate-600 border border-slate-500" />
+    <textarea placeholder="Message" class="w-full p-3 rounded bg-slate-600 border border-slate-500"></textarea>
+    <button type="submit" class="px-4 py-2 rounded bg-blue-500 hover:bg-blue-600">Send</button>
+  </form>
+</section>
+
+<!-- Blazor WebAssembly scripts -->
+<script src="_framework/blazor.webassembly.js"></script>
+</body>
+</html>
