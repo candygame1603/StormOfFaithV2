@@ -3,15 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wouter's Portfolio</title>
+  <title>Wouter van der Merwe</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Background moving blobs */
-    @keyframes move1 { 0% { transform: translate(0,0);} 50% { transform: translate(30px,20px);} 100% { transform: translate(0,0);} }
-    @keyframes move2 { 0% { transform: translate(0,0);} 50% { transform: translate(-40px,30px);} 100% { transform: translate(0,0);} }
-    .blob1 { animation: move1 12s infinite ease-in-out; }
-    .blob2 { animation: move2 16s infinite ease-in-out; }
-  </style>
+  <link href="styles.css" rel="stylesheet">
 </head>
 <body class="relative overflow-x-hidden">
 
@@ -23,9 +17,59 @@
     <circle class="blob2" cx="800" cy="200" r="100" fill="rgba(0,180,255,0.15)" />
   </svg>
 
+<div class="text-center relative">
   <h1 class="text-5xl font-bold z-10">Hi, I'm Wouter 👋</h1>
-  <p class="mt-4 text-xl z-10">Full-Stack Developer | React + .NET | Interactive Web Experiences</p>
+  <p class="mt-4 text-xl z-10">Microsoft Full-Stack Developer | BI Reporting Specialist</p>
   <button class="mt-6 px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg z-10">See My Work</button>
+
+<!-- Logo container -->
+<!-- Skills Section -->
+<section class="mt-16 text-center">
+  <h2 class="text-3xl font-bold text-white mb-8">💪 Technologies I'm Great At</h2>
+  
+  <!-- Logo container: Skills -->
+  <div class="flex flex-wrap justify-center gap-6">
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/HTML5.png" alt="HTML5" class="w-16 h-16" />
+    </div>
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/CSS3.png" alt="CSS3" class="w-16 h-16" />
+    </div>
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/JS.png" alt="JavaScript" class="w-16 h-16" />
+    </div>
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/SQL.svg" alt="SQL" class="w-16 h-16" />
+    </div>
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/20 transition">
+      <img src="img/PowerBI.png" alt="Power BI" class="w-16 h-16" />
+    </div>
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/CSharp.png" alt="C#" class="w-16 h-16" />
+    </div>
+  </div>
+</section>
+
+<!-- Learning Section -->
+<section class="mt-16 text-center">
+  <h2 class="text-3xl font-bold text-white mb-8">🚀 Currently Learning</h2>
+  
+  <!-- Logo container: Learning -->
+  <div class="flex flex-wrap justify-center gap-6">
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/Blazor.png" alt="Blazor" class="w-16 h-16" />
+    </div>
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/Azure.png" alt="Azure" class="w-16 h-16" />
+    </div>
+    <div class="bg-white/20 backdrop-blur-sm p-4 rounded-xl shadow-md hover:scale-110 hover:bg-white/30 transition">
+      <img src="img/DotNet.png" alt="DotNet" class="w-16 h-16" />
+    </div>
+  </div>
+</section>
+
+
+</div>
 </section>
 
 <!-- Projects Section -->
