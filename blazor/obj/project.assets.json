@@ -1762,11 +1762,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wouter vdm\\Portfolio\\WouterVanDerMerwe-PortFolio\\blazor\\blazor.csproj",
+      "projectUniqueName": "C:\\Users\\Wouter vdm\\Portfolio\\CandiceVanDerMerwe-PortFolio\\blazor\\blazor.csproj",
       "projectName": "blazor",
-      "projectPath": "C:\\Users\\Wouter vdm\\Portfolio\\WouterVanDerMerwe-PortFolio\\blazor\\blazor.csproj",
+      "projectPath": "C:\\Users\\Wouter vdm\\Portfolio\\CandiceVanDerMerwe-PortFolio\\blazor\\blazor.csproj",
       "packagesPath": "C:\\Users\\Wouter vdm\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Wouter vdm\\Portfolio\\WouterVanDerMerwe-PortFolio\\blazor\\obj\\",
+      "outputPath": "C:\\Users\\Wouter vdm\\Portfolio\\CandiceVanDerMerwe-PortFolio\\blazor\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Wouter vdm\\AppData\\Roaming\\NuGet\\NuGet.Config"
