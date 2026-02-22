@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storm Of Faith</title>
+  <link rel="icon" type="image/x-icon" href="img/Icons-01.png" />
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.clouds.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="_framework/blazor.webassembly.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark:bg-slate-900 dark:text-white relative overflow-x-hidden theme-transition">
+
+  <!-- Theme toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <button
+      id="theme-toggle"
+      aria-label="Toggle dark/light theme"
+      onclick="toggleTheme()"
+      class="bg-slate-700 text-slate-300 dark:bg-amber-100 dark:text-black p-3 rounded-full shadow-lg hover:bg-slate-600 dark:hover:bg-amber-200 transition-colors duration-600 hover:scale-105 items-center justify-center">
+      <!-- Moon icon (for light mode) -->
+      <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+      <!-- Sun icon (for dark mode) -->
+      <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </button>
+  </div>
+
+  <section id="pricing" class="pt-8 pb-12 px-4 sm:px-6 lg:px-8 bg-sky-100 dark:bg-violet-900">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Pricing Plans</h2>
+        <p class="mt-2 text-lg text-slate-600 dark:text-slate-300">Choose a plan that fits your needs. Switch between light and dark themes to see the responsive styles.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Business Basics</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">Perfect for new businesses or professionals needing essential branded documents</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R200 – R600 per item</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ Email signature</li>
+            <li>✓ Letterhead</li>
+            <li>✓ Business cards</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Product & Packaging</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">Ideal for small product-based businesses and boutiques</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R600 – R3 500</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ Label / jar / box design</li>
+            <li>✓ Sticker designs</li>
+            <li>✓ Packaging layout print-ready</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Corporate & Publication</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">Professional long-format layouts for business use</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R1 000 – R5 000</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ Magazine articles (advertising) - A4/DPS</li>
+            <li>✓ Business Branding Signs</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Event & Personal Print</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">For weddings, birthdays, and special occasions</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R 500 – R2 000</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ Invitation set</li>
+            <li>✓ Save-the-date card</li>
+            <li>✓ Thank-you card</li>
+            <li>✓ Menu Design</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+  </section>
+
+      <section id="showcase" class="">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center mb-6">
+      <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Design Showcase</h2>
+      </div>
+      <div class="relative w-full h-[500px] overflow-hidden rounded-xl">
+      <!-- Slideshow container -->
+      <div id="slideshow" class="relative w-full h-full">
+        <img src="img/AC Char Business Card.png" alt="AC Char Business Card" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Bridal Shower - Invite.png" alt="Bridal Shower - Invite" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Kitchen Tea - Invite.png" alt="Kitchen Tea Invite" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Poster A4 Design-01.png" alt="A-Dog-Able Grooming Poster" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/TTL Media (WCMG) A4.png" alt="TTL Media - WestCliff Mining" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/TTL Media (WCMG) DPS.png" alt="TTL Media - WestCliff Mining DPS" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/WCMG Advertising.png" alt="WCMG Advertising" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/WCMG.png" alt="WCMG Advertising" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Wedding Menu - Lord of the rings themed.png" alt="Lord of the rings themed" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Westcliff - Front wall Sign.png" alt="Westcliff - Front wall Sign" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Westcliff - Side wall.png" alt="Westcliff - Side wall Sign" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+      </div>
+      <!-- Navigation buttons -->
+      <button onclick="previousSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75">❮</button>
+      <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75">❯</button>
+      </div>
+    </div>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('#slideshow img');
+      
+      function showSlide(n) {
+      slides.forEach(slide => slide.style.opacity = '0');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].style.opacity = '1';
+      }
+      
+      function nextSlide() {
+      showSlide(currentSlide + 1);
+      }
+      
+      function previousSlide() {
+      showSlide(currentSlide - 1);
+      }
+
+      // Auto advance slides every 5 seconds
+      showSlide(0);
+      setInterval(nextSlide, 5000);
+    </script>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-sky-300 dark:bg-violet-800 text-slate-800 dark:text-white text-center py-6">
+    <p>&copy; <span id="year"></span> Storm Of Faith. John 3:16 "For God so loved the world..."</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="script.js"></script>
+  </footer>
+</body>
+</html>

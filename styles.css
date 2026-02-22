@@ -108,3 +108,7 @@ html , body{
     margin-top: -1rem;
   }
 }
+
+.vanta-canvas {
+  opacity: 100%;
+}

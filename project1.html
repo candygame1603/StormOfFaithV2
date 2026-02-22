@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Storm Of Faith</title>
+  <link rel="icon" type="image/x-icon" href="img/Icons-01.png" />
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.clouds.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="_framework/blazor.webassembly.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark:bg-slate-900 dark:text-white relative overflow-x-hidden theme-transition">
+
+  <!-- Theme toggle -->
+  <div class="fixed top-4 right-4 z-50">
+    <button
+      id="theme-toggle"
+      aria-label="Toggle dark/light theme"
+      onclick="toggleTheme()"
+      class="bg-slate-700 text-slate-300 dark:bg-amber-100 dark:text-black p-3 rounded-full shadow-lg hover:bg-slate-600 dark:hover:bg-amber-200 transition-colors duration-600 hover:scale-105 items-center justify-center">
+      <!-- Moon icon (for light mode) -->
+      <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+      <!-- Sun icon (for dark mode) -->
+      <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </button>
+  </div>
+
+  <section id="pricing" class="pt-8 pb-12 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-stone-50 via-sky-200 to-stone-50 dark:from-indigo-100 dark:via-indigo-400 dark:to-indigo-800 text-blue-950 dark:text-blue-950 theme-transition"> 
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white">Pricing Plans</h2>
+        <p class="mt-2 text-lg text-slate-600 dark:text-slate-300">Choose a plan that fits your needs. Switch between light and dark themes to see the responsive styles.</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Basic</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">Perfect for startups or personal brands</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R200 - R1 000</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ 2–3 logo concepts</li>
+            <li>✓ 2 revisions</li>
+            <li>✓ Final files in PNG, JPG & PDF</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+        <!-- Card 2 - Most Popular -->
+        <div class="relative bg-white dark:bg-slate-800 border-2 border-sky-500 dark:border-amber-500 rounded-xl p-6 shadow-lg transform scale-100 hover:scale-[1.01] transition">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Standard</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">For growing brands who want versatility and refinement.</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R1 200 - R2 000</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ 3–4 concepts</li>
+            <li>✓ Unlimited revisions</li>
+            <li>✓ Vector + all file formats</li>
+            <li>✓ Logo variations (full, icon, and watermark versions)</li>
+          </ul>
+          <button class="mt-6 w-full bg-slate-900 hover:bg-black text-white dark:bg-white dark:text-black py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Premium Logo + Mini Brand Kit</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">Your complete brand identity foundation.</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R2 000 - R5 000</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ All Standard features</li>
+            <li>✓ Color palette & typography options</li>
+            <li>✓ Social media profile & cover design</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Logo Refresh / Redesign</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">For businesses that already have a logo but need a modern update while keeping brand recognition.</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R600 - R1 800</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ Modernized version</li>
+            <li>✓ vector files</li>
+            <li>✓ optional typography update</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="relative bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-6 shadow-sm hover:shadow-md transition transform hover:-translate-y-1">
+          <h3 class="text-xl font-semibold text-slate-900 dark:text-white">Brand Symbol / Icon Suite</h3>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-300">Design custom icons or monograms derived from the main logo for apps, social media, or print</p>
+          <div class="mt-4 flex items-baseline gap-2">
+            <span class="text-3xl font-extrabold text-slate-900 dark:text-white">R1 300 - R3 000</span>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li>✓ 3–5 icons or monograms</li>
+            <li>✓ consistent color & style</li>
+          </ul>
+          <button class="mt-6 w-full bg-sky-500 hover:bg-sky-600 text-white dark:bg-amber-500 dark:hover:bg-amber-600 py-2 rounded-md font-medium transition">Prices dependant on design</button>
+        </div>
+        
+
+  </section>
+
+  <section id="showcase" class="">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="text-center mb-6">
+      <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">Design Showcase</h2>
+      </div>
+      <div class="relative w-full h-[500px] overflow-hidden rounded-xl">
+      <!-- Slideshow container -->
+      <div id="slideshow" class="relative w-full h-full">
+        <img src="img/Storm Of Faith Logo HD-01.png" alt="Storm Of Faith Logo" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/A-Dog-Able-Grooming-01.png" alt="A Dog Able Grooming Logo V1" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/AC CHar HD-01.png" alt="AC Char Logo" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Color Pallete Simple-01.png" alt="Color Pallete Simple-01" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Color Pallette-01.webp" alt="Color Pallette-01" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+        <img src="img/Vector Burger.png" alt="Vector Burger" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+         <img src="img/Storm & Rose Color-01-01.png" alt="Storm & Rose Logo" class="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-500">
+      </div>
+      <!-- Navigation buttons -->
+      <button onclick="previousSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75">❮</button>
+      <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/75">❯</button>
+      </div>
+    </div>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('#slideshow img');
+      
+      function showSlide(n) {
+      slides.forEach(slide => slide.style.opacity = '0');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].style.opacity = '1';
+      }
+      
+      function nextSlide() {
+      showSlide(currentSlide + 1);
+      }
+      
+      function previousSlide() {
+      showSlide(currentSlide - 1);
+      }
+
+      // Auto advance slides every 5 seconds
+      showSlide(0);
+      setInterval(nextSlide, 5000);
+    </script>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-sky-300 dark:bg-violet-800 text-slate-800 dark:text-white text-center py-6">
+    <p>&copy; <span id="year"></span> Storm Of Faith. John 3:16 "For God so loved the world..."</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    <script src="script.js"></script>
+  </footer>
+</body>
+</html>
